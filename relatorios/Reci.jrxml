@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="300" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ccb7063c-a623-4b0d-9bb6-9c9d48b7e72a">
+	<property name="ireport.zoom" value="1.9487171000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Receptivo"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="620"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="370"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="332"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="663"/>
+	<subDataset name="Dataset1" uuid="55d415ea-6dfc-4767-bd2b-c19d858a018e">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Alianz"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[SELECT receptivo.receita.id_receita,
+	receptivo.receita.receita_nome,
+	receptivo.receita.receita_valor,
+	receptivo.servico.servico_identificador,
+	receptivo.servico.servico_nome
+FROM receptivo.receita
+	INNER JOIN receptivo.servico ON 
+	 receptivo.receita.servico_id_servico = receptivo.servico.id_servico
+WHERE
+receptivo.receita.servico_id_servico = 1]]>
+	</queryString>
+	<field name="id_receita" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_receita"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_receita"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="receita"/>
+	</field>
+	<field name="receita_nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="receita_nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="receita_nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="receita"/>
+	</field>
+	<field name="receita_valor" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="receita_valor"/>
+		<property name="com.jaspersoft.studio.field.label" value="receita_valor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="receita"/>
+	</field>
+	<field name="servico_identificador" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="servico_identificador"/>
+		<property name="com.jaspersoft.studio.field.label" value="servico_identificador"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="servico"/>
+	</field>
+	<field name="servico_nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="servico_nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="servico_nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="servico"/>
+	</field>
+	<background>
+		<band height="17"/>
+	</background>
+	<title>
+		<band height="260">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="280" backcolor="#FFFFFF" uuid="0eb55b8f-d298-4b9f-ba82-3272a3d4de45"/>
+				<staticText>
+					<reportElement x="20" y="4" width="139" height="43" forecolor="#607D8B" uuid="0ebec5f2-32ed-4d11-a9a1-ab3dc501d3fe"/>
+					<textElement verticalAlignment="Middle">
+						<font size="26" isBold="true"/>
+					</textElement>
+					<text><![CDATA[RECIBO Nº]]></text>
+				</staticText>
+				<textField isBlankWhenNull="false">
+					<reportElement x="160" y="4" width="120" height="43" forecolor="#000000" uuid="ba76eb98-8eb6-4b93-a4c1-2cbe0758796f"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="26" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{id_receita}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="110" y="97" width="223" height="20" forecolor="#000000" uuid="ccbf5694-da3e-4039-828a-689c5d6d3dec"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				</textField>
+				<textField>
+					<reportElement x="110" y="137" width="215" height="20" forecolor="#000000" uuid="3e63b5b9-49da-4514-8dc3-34c607440279"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{servico_nome}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="370" y="248" width="210" height="23" forecolor="#000000" backcolor="#607D8B" uuid="b92b766a-f0de-46db-8d2a-ab9ff7713c58"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["CONFIANÇA VIAGENS E TURISMO LTDA"]]></textFieldExpression>
+				</textField>
+				<textField pattern="##.###">
+					<reportElement x="240" y="248" width="130" height="22" forecolor="#000000" backcolor="#607D8B" uuid="fdbdbe6c-c284-478f-9de6-0468f48c04e1"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["CNPJ: 22.858.227/0001-78"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="449" y="97" width="130" height="20" forecolor="#000000" uuid="df289ef0-a42b-464f-97c7-8e5d12a92330"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				</textField>
+				<staticText>
+					<reportElement x="300" y="4" width="139" height="43" forecolor="#607D8B" uuid="9b34269e-cc5d-4bbc-9c9b-e18ca5865614"/>
+					<textElement verticalAlignment="Middle">
+						<font size="26" isBold="true"/>
+					</textElement>
+					<text><![CDATA[VALOR R$]]></text>
+				</staticText>
+				<textField pattern="#,##0.00#">
+					<reportElement mode="Opaque" x="439" y="4" width="139" height="43" forecolor="#000000" backcolor="#FFFFFF" uuid="4c0fc1a7-6f91-4be1-98a6-5acb5b7684be"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Dialog" size="26"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{receita_valor}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="20" y="97" width="90" height="20" forecolor="#607D8B" uuid="246d584e-8870-435f-af6e-355b78ea4f13"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Recebi(emos) de]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="20" y="117" width="90" height="20" forecolor="#607D8B" uuid="827fb69c-811a-4f3d-9556-0d929feb88c9"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[a quantidade de]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="21" y="137" width="90" height="20" forecolor="#607D8B" uuid="c3a48117-8f92-4adc-be9c-9bfb4c1c8a49"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Correspondente a]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="333" y="97" width="116" height="20" forecolor="#607D8B" uuid="684cca37-e14e-4ee6-839d-a7395e6ba56c"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[inscrito no CPF/CNPJ ]]></text>
+				</staticText>
+				<textField pattern="dd MMMMM yyyy">
+					<reportElement x="60" y="189" width="151" height="20" forecolor="#000000" backcolor="#607D8B" uuid="818fd49b-593c-47de-b2ce-7c3e7d2d7d51"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement stretchType="RelativeToBandHeight" x="500" y="230" width="80" height="17" forecolor="#607D8B" backcolor="#607D8B" uuid="dcc75a1c-39af-4169-95b4-9d2afa5815d8"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<text><![CDATA[AlianzSys ®]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="20" y="189" width="90" height="20" forecolor="#607D8B" uuid="485ab7e0-f55a-465c-87ea-cbb4b9f8d900"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Cuiabá, ]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="240" y="189" width="130" height="20" forecolor="#000000" uuid="c3c43518-fb55-46a9-b52e-471b94e6abae"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{receita_nome}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="238" y="189" width="340" height="1" forecolor="#000000" uuid="0048f707-1c4a-42da-9d57-5b7fe162934e"/>
+				</line>
+				<staticText>
+					<reportElement x="21" y="50" width="29" height="20" forecolor="#607D8B" uuid="b868797a-4a8c-4af3-8a1d-59399519865f"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[File:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="40" y="50" width="294" height="20" forecolor="#000000" uuid="4d1a3638-febb-4467-ab22-3d495b8d1f31"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{servico_identificador}]]></textFieldExpression>
+				</textField>
+				<line direction="BottomUp">
+					<reportElement x="9" y="47" width="571" height="1" forecolor="#FFFFFF" uuid="94a97349-3ffc-45e7-aff1-4f3123ef2082"/>
+				</line>
+			</frame>
+		</band>
+	</title>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

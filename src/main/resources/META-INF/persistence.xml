@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.confianca_confianca_jar_0.0.1-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>teste.Produto</class>
+    <class>teste.DataTarifa</class>
+    <class>teste.Cidade</class>
+    <class>teste.TipoDespesa</class>
+    <class>teste.CondicaoPagamentoRecebimento</class>
+    <class>teste.Venda</class>
+    <class>teste.Imagens</class>
+    <class>teste.Cliente</class>
+    <class>teste.Tarifa</class>
+    <class>teste.Usuario</class>
+    <class>teste.Historico</class>
+    <class>teste.Despesa</class>
+    <class>teste.Estado</class>
+    <class>teste.Detalhe</class>
+    <class>teste.Recebimento</class>
+    <class>teste.CentroDeCusto</class>
+    <class>teste.Passageiro</class>
+    <class>teste.ServicoProduto</class>
+    <class>teste.Fornecedor</class>
+    <class>teste.TipoCliente</class>
+    <class>teste.Receita</class>
+    <class>teste.Pais</class>
+    <class>teste.TipoReceita</class>
+    <class>teste.TipoPagamentoRecebimento</class>
+    <class>teste.Cupom</class>
+    <class>teste.Guia</class>
+    <class>com.confianca.Estado</class>
+    <class>com.confianca.Historico</class>
+    <class>com.confianca.Usuario</class>
+    <class>com.confianca.Fornecedor</class>
+    <class>com.confianca.Cidade</class>
+    <class>com.confianca.Guia</class>
+    <class>com.confianca.TipoCliente</class>
+    <class>com.confianca.Pais</class>
+    <class>com.confianca.Produto</class>
+    <class>com.confianca.Cupom</class>
+    <class>com.confianca.Cliente</class>
+    <class>com.confianca.TipoDespesa</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://192.168.171.33:3306/receptivo?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+      <property name="javax.persistence.jdbc.user" value="helder"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="@Mudar123"/>
+    </properties>
+  </persistence-unit>
+</persistence>

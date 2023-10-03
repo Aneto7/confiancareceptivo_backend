@@ -1,0 +1,16 @@
+package com.confianca.repositories;
+
+import com.confianca.domain.Cidade;
+import com.confianca.domain.DetalheProduto;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+@Repository
+public interface DetalheProdutoRepository extends JpaRepository <DetalheProduto,Integer> {
+
+    @Transactional(readOnly=true)
+    public List<DetalheProduto> findByProdutoId(Integer id);
+}
